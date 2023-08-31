@@ -16,40 +16,39 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-//    $user=User::find(1);
-//   $user->update([//better
-    // 'email'=>'dfhg@gmail.com',
-//    ]);
-   //like 1 $user=DB::table('users')->where('id',1)->get();//with query  builder
-  //  $user=User::find(3);
- //  $user->delete();
- //we have 3 method for select
- //----------------------01-------------
-     // $user=DB::select('select * from users');
-   //----------------------2-------------------
-     //    $user=DB::table('users')->get();
-//-------------------------3----------------//
-             $user=User::all(); //do not forget the library with models
-  //_____________________  //*/*/*/*/**/**/*/*/*/*/**/*/*/*/*/*/*/*/*/*/*/****/*/ */ */ */ */________________________//
- //we have 3 methode for insert worker
- //-----------------------1-------------------//
-            // $user=DB::table('users')->insert([
-            // 'name'=>'dfg3',
-            // 'email'=>'sdf31@gmail.com',
-            // 'password'=>'ds'  ]);
-   //---------------------2--------------------//
-    // $user=DB::insert('insert into users (name,email,password) values (?, ?,?)',
-    //  [ 'Dayle','g@gmail.com','password']);
-    //---------------------3-------------------
-    // $user=User::create([
-        // 'name'=>'malek',
-        // 'email'=>'imam@gmail.com',
-        // 'password'=> ('gfjghfjfgds'),//for security
-//  ]);
+     return view('welcome');
 
-   dd($user);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
