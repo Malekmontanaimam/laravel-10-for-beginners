@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+//    $user=User::find(1);
+//   $user->update([//better
+    // 'email'=>'dfhg@gmail.com',
+//    ]);
+   //like 1 $user=DB::table('users')->where('id',1)->get();//with query  builder
+  //  $user=User::find(3);
+ //  $user->delete();
+ //we have 3 method for select
+ //----------------------01-------------
+     // $user=DB::select('select * from users');
+   //----------------------2-------------------
+     //    $user=DB::table('users')->get();
+//-------------------------3----------------//
+             $user=User::all(); //do not forget the library with models
+  //_____________________  //*/*/*/*/**/**/*/*/*/*/**/*/*/*/*/*/*/*/*/*/*/****/*/ */ */ */ */________________________//
+ //we have 3 methode for insert worker
+ //-----------------------1-------------------//
+            // $user=DB::table('users')->insert([
+            // 'name'=>'dfg3',
+            // 'email'=>'sdf31@gmail.com',
+            // 'password'=>'ds'  ]);
+   //---------------------2--------------------//
+    // $user=DB::insert('insert into users (name,email,password) values (?, ?,?)',
+    //  [ 'Dayle','g@gmail.com','password']);
+    //---------------------3-------------------
+    // $user=User::create([
+        // 'name'=>'malek',
+        // 'email'=>'imam@gmail.com',
+        // 'password'=> ('gfjghfjfgds'),//for security
+//  ]);
+
+   dd($user);
 });
 
 Route::get('/dashboard', function () {
@@ -29,3 +62,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+//the benefit of user models its c0neccted with factory(sql),seed(?),
+//controller ,policy, ......
